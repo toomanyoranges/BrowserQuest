@@ -21,11 +21,13 @@ namespace 'deploy', ->
 
 
 namespace 'client', ->
+    task  'config', (done) -> run "cd #{roco.currentPath}/client/config; cp /srv/www/browserquest/config/client/config_build.json ./; cp /srv/www/browserquest/config/client/config_local.json ./;", done
     task  'start', (done) -> run "forever start /srv/www/browserquest/current/client.js", done
     task  'stop', (done) -> run "forever stop /srv/www/browserquest/current/client.js", done
     task  'restart', (done) -> run "forever restart /srv/www/browserquest/current/client.js || forever start /srv/www/browserquest/current/client.js", done
 
 namespace 'server', ->
+    task 'config', (done) -> run "cd #{roco.currentPath}/server; cp /srv/www/browserquest/config/server/config_local.json ./;", done
     task  'start', (done) -> run "forever start /srv/www/browserquest/current/server/js/main.js", done
     task  'stop', (done) -> run "forever stop /srv/www/browserquest/current/server/js/main.js", done
     task  'restart', (done) -> run "forever restart /srv/www/browserquest/current/server/js/main.js || forever start /srv/www/browserquest/current/server/js/main.js", done
