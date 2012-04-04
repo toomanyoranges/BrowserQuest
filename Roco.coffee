@@ -15,19 +15,19 @@ namespace 'deploy', ->
     
     task  'build', (done) -> run "cd #{roco.currentPath}/bin; ./build.sh", done
     
-    task 'clientRestart', (done) -> run "forever restart /srv/www/browserquest/current/client.js || forever start /srv/www/browserquest/current/client.js", done
-    task 'serverRestart', (done) -> run "forever restart /srv/www/browserquest/current/server/js/main.js || forever start /srv/www/browserquest/current/server/js/main.js", done
+    task 'clientRestart', (done) -> run "sudo -u node forever restart /srv/www/browserquest/current/client.js || sudo -u node forever start /srv/www/browserquest/current/client.js", done
+    task 'serverRestart', (done) -> run "cd #{roco.currentPath}; sudo -u node forever restart server/js/main.js || sudo -u node forever start server/js/main.js", done
     
 
 
 namespace 'client', ->
     task  'config', (done) -> run "cd #{roco.currentPath}/client/config; cp /srv/www/browserquest/config/client/config_build.json ./; cp /srv/www/browserquest/config/client/config_local.json ./;", done
-    task  'start', (done) -> run "forever start /srv/www/browserquest/current/client.js", done
-    task  'stop', (done) -> run "forever stop /srv/www/browserquest/current/client.js", done
-    task  'restart', (done) -> run "forever restart /srv/www/browserquest/current/client.js || forever start /srv/www/browserquest/current/client.js", done
+    task  'start', (done) -> run "sudo -u node forever start /srv/www/browserquest/current/client.js", done
+    task  'stop', (done) -> run "sudo -u node forever stop /srv/www/browserquest/current/client.js", done
+    task  'restart', (done) -> run "sudo -u node forever restart /srv/www/browserquest/current/client.js || sudo -u node forever start /srv/www/browserquest/current/client.js", done
 
 namespace 'server', ->
     task 'config', (done) -> run "cd #{roco.currentPath}/server; cp /srv/www/browserquest/config/server/config_local.json ./;", done
-    task  'start', (done) -> run "forever start /srv/www/browserquest/current/server/js/main.js", done
-    task  'stop', (done) -> run "forever stop /srv/www/browserquest/current/server/js/main.js", done
-    task  'restart', (done) -> run "forever restart /srv/www/browserquest/current/server/js/main.js || forever start /srv/www/browserquest/current/server/js/main.js", done
+    task  'start', (done) -> run "cd #{roco.currentPath}; sudo -u node forever start server/js/main.js", done
+    task  'stop', (done) -> run "cd #{roco.currentPath}; sudo -u node forever stop server/js/main.js", done
+    task  'restart', (done) -> run "cd #{roco.currentPath}; sudo -u node forever restart server/js/main.js || sudo -u node forever start server/js/main.js", done
