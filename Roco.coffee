@@ -31,4 +31,3 @@ namespace 'server', ->
     task  'start', (done) -> run "forever start /srv/www/browserquest/current/server/js/main.js", done
     task  'stop', (done) -> run "forever stop /srv/www/browserquest/current/server/js/main.js", done
     task  'restart', (done) -> run "forever restart /srv/www/browserquest/current/server/js/main.js || forever start /srv/www/browserquest/current/server/js/main.js", done
-
