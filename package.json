@@ -9,12 +9,11 @@
     "bison": "1.x",
     "websocket": "1.x",
     "websocket-server": "1.x",
-    "sanitizer": "0.x",
-    "memcache": "0.x"
+    "sanitizer": "0.x"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:toomanyoranges/BrowserQuest.git"    
+    "url": "git@github.com:toomanyoranges/BrowserQuest.git"
   },
   "scripts": {
     "serverUp": "forever start server/js/main.js",
