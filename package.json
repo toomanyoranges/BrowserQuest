@@ -1,0 +1,25 @@
+{
+  "name": "Browserquest",
+  "description": "toomanyoranges' fork of Mozilla's Browserquest",
+  "author": "Fielding Johnston <fielding@justfielding.com>",
+  "engine": "node >= 0.6.12",
+  "dependencies": {
+    "underscore": "1.x",
+    "log": "1.x",
+    "bison": "1.x",
+    "websocket": "1.x",
+    "websocket-server": "1.x",
+    "sanitizer": "0.x",
+    "memcache": "0.x",
+    "express": "3.0.0alpha1-pre"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:toomanyoranges.git/BrowserQuest.git"    
+  },
+  "scripts": {
+    "serverUp": "forever start server/js/main.js",
+    "clientUp": "forever start client.js" 
+  },
+  "version": "0.1.0"
+}

@@ -2,7 +2,7 @@
 
 # Script to generate an optimized client build of BrowserQuest
 
-BUILDDIR="../client-build"
+BUILDDIR="../public"
 PROJECTDIR="../client/js"
 CURDIR=$(pwd)
 

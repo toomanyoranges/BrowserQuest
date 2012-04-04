@@ -1,7 +1,7 @@
 ({
     appDir: "../",
     baseUrl: "js/",
-    dir: "../../client-build",
+    dir: "../../public",
     optimize: "uglify",
     optimizeCss: "standard.keepLines",
     
